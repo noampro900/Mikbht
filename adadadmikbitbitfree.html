@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Right Popup Example</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: url('https://source.unsplash.com/1600x900/?nature,water') no-repeat center center fixed;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .popup {
+      position: fixed;
+      top: 20%;
+      right: -300px; /* Start hidden off-screen */
+      width: 250px;
+      padding: 20px;
+      background-color: white;
+      box-shadow: -4px 4px 15px rgba(0,0,0,0.2);
+      border-radius: 8px 0 0 8px;
+      transition: right 0.5s ease-in-out;
+    }
+
+    .popup.show {
+      right: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="popup" id="rightPopup">
+    <p>from now mikbits are for free if you wanna get yours click below!</p>
+    <a class="redirect-btn" href="https://example.com">get yours today</a>
+  </div>
+
+  <script>
+    // Show the popup after a short delay
+    window.addEventListener("load", () => {
+      const popup = document.getElementById("rightPopup");
+      setTimeout(() => {
+        popup.classList.add("show");
+      }, 1000); // 1 second delay
+    });
+  </script>
+</body>
+</html>
